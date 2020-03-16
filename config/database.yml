@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: StackApp_production
   username: StackApp
   password: <%= ENV['STACKAPP_DATABASE_PASSWORD'] %>
