@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="top-wrapper">
+    
+    <% @financials.each do |financial| %>
+      <div class="inc-group">
+        <h1 class="left"><%= financial.name %></h1>
+        <div class="right">
+          <%= link_to '詳細', financial, class: 'financial-item btn-item' %> 
+          <%= link_to '変更', edit_financial_path(financial), class: 'btn-item' %>
+          <% if current_user == financial.user %>
+            <%= link_to '削除', financial, method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: 'btn-item' %>
+          <% end %>
+        </div>
+        <div class="clear"></div>
+      </div>
+    <% end %>
+  </div>
+</div>

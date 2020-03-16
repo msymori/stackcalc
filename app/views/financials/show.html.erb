@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="finance-wrapper">
+    <div class="inc-title">
+      <%= @financial.name %>
+    </div>
+    
+    <div class="inc-btn">
+      <%= link_to '変更', edit_financial_path, class: 'btn-item show-btn' %>
+      <% if current_user == @financial.user %>
+        <%= link_to '削除', @financial, method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: 'btn-item show-btn' %>
+      <% end %>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="fin-data">
+    <div class="pl-wrapper">
+      <p class="table-title">損益計算書 <small>単位：（百万円）</small></p>
+      <p>売上高         : <%= @financial.revenues %></p>
+      <p>売上総利益     : <%= @financial.grossRevenues %></p>
+      <p>営業利益       : <%= @financial.operateRevenues %></p>
+      <p>経常利益       : <%= @financial.nonOperateRevenues %></p>
+      <p>税前当期純利益 : <%= @financial.incomeTax %></p>
+      <p>当期純利益     : <%= @financial.income %></p>
+      <p>販管費         : <%= @financial.expense %></p>
+    </div>
+    
+    <div class="bs-wrapper">
+      <p class="table-title">貸借対照表 <small>単位：（百万円）</small></p>
+      <p>流動資産  : <%= @financial.currentAssets %></p>
+      <p>固定資産  : <%= @financial.fixedAssets %></p>
+      <p>総資産    : <%= @financial.totalAssets %></p>
+      <p>流動負債  : <%= @financial.currentLiabilites %></p>
+      <p>固定負債  : <%= @financial.fixedLiabilites %></p>
+      <p>負債合計  : <%= @financial.totalLiabilites %></p>
+      <p>純資産合計: <%= @financial.copitalStock %></p>
+    </div>
+    </div>
+    
+    <div class="result">
+    <div class="result-wrapper">
+      <p class="tables-title"></p>
+      
+      <table border="1">
+        <figcaption>経営状況</figcaption>
+        <tr>
+          <td class="fin-name">売上総利益率</td><td class="fin-per"><%= (@financial.grossRevenues.to_f / @financial.revenues.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">営業利益率</td><td class="fin-per"><%= (@financial.operateRevenues.to_f / @financial.revenues.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">経常利益率</td><td class="fin-per"><%= (@financial.nonOperateRevenues.to_f / @financial.revenues.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">当期純利益率</td><td class="fin-per"><%= (@financial.income.to_f / @financial.revenues.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">販管費率</td><td class="fin-per"><%= ((@financial.expense.to_f / @financial.revenues.to_f).round(2) * 100).round(2)  %></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="result-wrapper">
+      
+      <table border="1">
+        <figcaption>会社の収益性</figcaption>
+        <tr>
+          <td class="fin-name">総資産利益率(ROA)</td><td class="fin-per"><%= (@financial.income.to_f / @financial.totalAssets.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">営業利益のROA</td><td class="fin-per"><%= (@financial.operateRevenues.to_f / @financial.totalAssets.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">自己資本利益率(ROE)</td><td class="fin-per"><%= (@financial.income.to_f / @financial.copitalStock.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">営業利益のROE</td><td class="fin-per"><%= (@financial.operateRevenues.to_f / @financial.copitalStock.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">総資産回転率</td><td class="fin-per"><%= (@financial.revenues.to_f / @financial.totalAssets.to_f).round(2) * 100 %></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="result-wrapper">
+      
+      <table border="1">
+        <figcaption>会社の安全性</figcaption>
+        <tr>
+          <td class="fin-name">自己資本比率</td><td class="fin-per"><%= (@financial.copitalStock.to_f / @financial.totalAssets.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">流動比率</td><td class="fin-per"><%= (@financial.currentAssets.to_f / @financial.currentLiabilites.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">固定比率</td><td class="fin-per"><%= (@financial.fixedAssets.to_f / @financial.copitalStock.to_f).round(2) * 100 %></td>
+        </tr>
+        <tr>
+          <td class="fin-name">固定長期適合率</td><td class="fin-per"><%= (@financial.fixedAssets.to_f / (@financial.copitalStock.to_f + @financial.fixedLiabilites.to_f)).round(2) * 100 %></td>
+        </tr>
+      </table>
+    </div>
+    </div>
+    <div class="clear"></div>
+    
+  </div>
+</div>

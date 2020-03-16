@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <div class="header-left">
+      <p class="logo">Stack Calc</p>
+    </div>
+    <div class="header-right">
+      <% if logged_in? %>
+        <div class="signup" id="signup-show"><%= link_to '企業リスト', financials_path, class: 'signup' %></div>
+        <div class="login" id="login-show"><%= link_to '財務登録', new_financial_path, class: 'signup' %></div>
+        <div class="login" id="login-show"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'signup' %></div>
+      <% else %>
+        <div class="signup" id="signup-show"><%= link_to 'サインアップ', signup_path, class: 'signup' %></div>
+        <div class="login" id="login-show"><%= link_to 'ログイン', login_path, class: 'signup' %></div>
+      <% end %>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="inc-wrapper">
+    
+    <h3>企業リスト</h3>
+    <div class="">
+      <ul>
+        <% @financials.each do |finance| %>
+          <li><%= link_to finance.name, finance %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

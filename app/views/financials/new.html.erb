@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="finance-wrapper">
+    
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <h3 class="finance-title">財務諸表作成</h3>
+        
+        <%= form_with(model: @financial, local: true) do |f| %>
+          <div class="form-group">
+            <%= f.select :year, [[2020,2020],[2019, 2019],[2018,2018],[2017,2017]], class: "select" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :name, '企業名' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group finance-sheet">
+            <h3>損益計算書</h3><p>単位：（百万円）</p>  
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :revenues, '売上高' %>
+            <%= f.number_field :revenues, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :grossRevenues, '売上総利益' %>
+            <%= f.number_field :grossRevenues, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :operateRevenues, '営業利益' %>
+            <%= f.number_field :operateRevenues, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :nonOperateRevenues, '経常利益' %>
+            <%= f.number_field :nonOperateRevenues, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :incomeTax, '税引き前当期純利益' %>
+            <%= f.number_field :incomeTax, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :income, '当期純利益' %>
+            <%= f.number_field :income, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :expense, '販管費' %>
+            <%= f.number_field :expense, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group finance-sheet">
+            <h3>貸借対照表</h3><p>単位：（百万円）</p>  
+          </div>
+          
+          
+          <div class="form-group">
+            <%= f.label :currentAssets, '流動資産' %>
+            <%= f.number_field :currentAssets, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :fixedAssets, '固定資産' %>
+            <%= f.number_field :fixedAssets, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :totalAssets, '純資産' %>
+            <%= f.number_field :totalAssets, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :currentLiabilites, '流動負債' %>
+            <%= f.number_field :currentLiabilites, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :fixedLiabilites, '固定負債' %>
+            <%= f.number_field :fixedLiabilites, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :totalLiabilites, '負債合計' %>
+            <%= f.number_field :totalLiabilites, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :copitalStock, '純資産合計' %>
+            <%= f.number_field :copitalStock, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group btn-style">
+            <%= f.submit '登録する', class: 'submit btn-block btn-style' %>
+          </div>
+          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

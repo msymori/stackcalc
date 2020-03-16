@@ -1,0 +1,185 @@
+// Place all the styles related to the Financials controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.finance-wrapper {
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+.row .finance-title {
+  padding-bottom: 20px;
+}
+
+.finance-sheet {
+  margin:40px 15px 30px 15px;
+}
+
+.btn-style {
+  margin-top: 30px;
+}
+
+.select{
+    outline:none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    background: none transparent;
+    vertical-align: middle;
+    font-size: inherit;
+    color: inherit;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+.top-wrapper {
+  margin-top: 130px;
+}
+
+.btn-item {
+  padding: 10px 15px;
+  background-color:gray ;
+  color:white;
+  text-decoration:none;
+  border-radius: 10px 10px;
+  margin-right:10px;
+}
+
+.btn-item:hover {
+  background-color: white;
+  border: 1px solid gray;
+  color:gray;
+}
+
+.inc-group {
+  background-color: lightgray;
+  padding: 10px 0 7px 0;
+  border-radius: 10px 10px;
+  letter-spacing:3px;
+  font-size:20px;
+  margin-bottom: 35px;
+  box-shadow: 0 0 8px gray;
+}
+
+.inc-group:hover {
+  background-color:rgba(lightgray, 0.5);
+}
+
+.left {
+  float: left;
+  line-height:38px;
+  font-size:18px;
+  letter-spacing: 3px;
+  margin-left: 35px;
+}
+
+.right {
+  float: right;
+  line-height:38px;
+  margin-right: 30px;
+  font-size:16px;
+}
+
+.clear {
+  clear: both;
+}
+
+/*-----------------------show.html.erb---------------------------*/
+
+.inc-title {
+  float:left;
+  line-height:50px;
+  margin-right: 60px;
+  margin-left:30px;
+  font-size:25px;
+}
+
+.show-btn {
+  float:left;
+}
+
+.table-title {
+  font-size:25px;
+}
+
+small {
+  font-size:12px;
+  margin-left:10px;
+}
+
+.fin-data {
+  margin:40px 20px 40px 20px;
+}
+
+.pl-wrapper {
+  float:left;
+  margin:10px 20px 10px 10px;
+  padding:20px;
+  letter-spacing:2px;
+  background-color:lightgray;
+  border-radius: 15px 15px;
+  box-shadow: 0 0 8px gray;
+}
+
+.bs-wrapper {
+  float:left;
+  margin:10px;
+  padding:20px;
+  letter-spacing:2px;
+  background-color:lightgray;
+  border-radius: 15px 15px;
+  box-shadow: 0 0 8px gray;
+}
+
+.result {
+  float:right;
+  margin-right:20px;
+}
+
+.result-wrapper {
+  margin-top:16px;
+}
+
+.tables-title {
+  font-size:18px;
+  margin-top:5px;
+}
+
+.fin-name {
+  width:200px;
+}
+
+.fin-per {
+  width:80px;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 3px gray;
+}
+
+table tr *:nth-child(1){
+  background: lightgray;
+  color:black;
+}
+
+table tr *:nth-child(2){
+  background: gray;
+}
+
+table tr *:nth-child(3){
+  background: #649cdf;
+}
+
+table tr *:nth-child(4){
+  background: #6e87d7;
+}
+
+table th,table td{
+  color:white;
+  border:solid 1px white;
+  text-align: center;
+  padding:2px 20px 2px 20px;
+}
